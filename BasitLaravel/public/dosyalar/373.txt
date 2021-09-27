@@ -1,0 +1,2048 @@
+PHP DERSLERİ
+DEĞİŞKENLER 
+Php de değişkenler $ işaretri ile oluşturulur 
+Php  türkçe karakter kabul etmez
+kelime arası boşluk kabul etmez 
+sayı ile oluşturulan değişkeni kabul etmez
+sayısal veri tipleri tırnak içine alınmaz , metinsel değişkenler de ='''' kullanılır 
+echo ile birden fazla değişken yazdırmak için .(nokta) kullanılır 
+Tek tırnak içine değişken atanmaz.
+
+
+ATAMA OPERATÖRLERİ 
+Değişkenlerime varklı görevler atamamıza yarar.
+Örnek :  
+```
+<?php
+$z = 30;                                  sonuç: 75
+$a = 45;
+echo $z = $z + $a ;
+```
+Burada z ve a değişkenlerini topladık
+
+örnek: 
+```
+<?php
+$z = 30;
+$a = 45;                                   sonuç: 3045
+echo $z = $z .= $a ;
+```
+Burada .= komutu z ve a değişkenlerini yan yana yazdırmaya yarar       
+
+                                                                                                                  VERİ TİPLERİ 
+
+İNTEGER: Tm sayı değerleri       1    ,255 
+FLOAT: Ondalılı sayılar   10.50  ,    25.30
+STRİNG: "Düz yazı"   "a"
+BOOLEAN: Mantıksal ifadeler 1 veya 0 
+ARRAY : Diziler
+OBJECT: Nesneler 
+
+var_dump : atadığımız değişkenin ve verilerin bilgisini verir.  kaçıncı sayfa, kaçıncı satır , dosya bilgisi v.s .
+
+örnek: 
+```
+C:\wamp64\www\index.php:3:int 20
+```
+Burada kod satır sayısı 3 adet, veri tipi int olan ve değişken verisi 20 olan kodlamanın bilgisini gösteriyor .
+
+length: string lerde "" (çift tırnak ) arasına yazılan bilginin kaç harf uzunlukta olduğunu gösterir.
+
+Örnek: 
+```
+<?php
+$a = "10.20";
+var_dump($a);
+```
+Burada 10.20    5 karakterden oluştuğu için length=5 olur.
+
+BOOLEAN:  TRUE , FALSE 
+Örnek: 
+```
+<?php
+$a = false;                   sonuç:   C:\wamp64\www\index.php:3:boolean false
+var_dump($a);
+```
+Buarada mantıksal olarak false sonucu veriyor
+
+ARRAY DİZİLER 
+Önek:
+```
+<?php
+$arabalar= array("mercedes","bmw","audi" , 2 );
+var_dump($arabalar);
+```
+sonuç: 
+```
+array (size=4)
+  0 => string 'mercedes' (length=8)
+  1 => string 'bmw' (length=3)
+  2 => string 'audi' (length=4)
+  3 => int 2
+```
+
+                                                                                                          SABİTLER
+DEFİNE KOMUTU: Değişmeyecek olan değerleri göstermeye yarar , yani site adı gibi .
+```
+define("siteAd","www.akoluk.com", true);         
+echo mercedes ;
+                                                             SONUÇ: Burada www.akoluk.com değişmez 
+```
+                                                                                                      SİHİRLİ SABİTLER 
+
+```
+echo "dosya".__FILE__. "<br"; // programın dosya konumunu gösterir.
+echo "satır".__LINE__. "
+"; // kaçıncı satırda olduğunu gösterir.
+echo "php versiyon". PHP_VERSION ."
+";   // programın kaçıncı versiyon olduğunu gösterir.
+```
+                                                                                                         KARŞILAŞTIRMA OPERATÖRLERİ
+
+== EŞİTTİR
+<> EŞİT DEĞİLDİR
+<= KÜÇÜK EŞİTTİR
+>=BÜYÜK EŞİTTİR
+<KÜÇÜKTÜR
+>BÜYÜKTÜR
+
+Örnek:
+```
+$s = 25;
+$v = 30;
+var_dump($s <= $v);
+```
+                                                                                                            İF ELSE İFADELERİ
+
+İf else ifadesinde $ ile atanan değişkenler () parantez içine yazılır . değişkene atayacağımız değer ise {} süslü parantez içine echo komutu ile yazdırılır  . 
+
+Örnek : 
+```
+if($p < $z)
+{echo "doğru";}
+else {
+    echo "yalnış";
+} 
+```
+sonuç : doğru 
+
+Örnek:
+```
+$p = 40;
+$z = 50;
+if($p == $z)
+{echo "doğru";
+}
+elseif($p == 30)
+{echo "yalnış" ;
+}
+else {
+    echo "yalnış";
+} 
+```
+sonuç: yalnış
+
+
+KARMA KOD ÇALIŞMASI 
+
+```
+<?php
+$a=array("araba","kamyon","tır". 5);
+var_dump($a);
+$sayi= 20;
+$puan=30;
+echo $sayi=$sayi*$puan;
+define("mercedes","c200");
+echo mercedes ; 
+echo "dosya".__FILE__. "<br"; // programın dosya konumunu gösterir.
+echo "satır".__LINE__. "
+"; // kaçıncı satırda olduğunu gösterir.
+echo "php versiyon". PHP_VERSION ."
+";   // programın kaçıncı versiyon olduğunu gösterir.
+$s = 25;
+$v = 30;
+var_dump($s <= $v);
+$p = 50;
+$z = 50;
+if($p == $z)
+{echo "doğru";
+}
+elseif($p < 60)
+{echo "doğruysa" ;
+}
+else {
+    echo "yalnış";
+} 
+$u ="mavi";
+switch($u) {
+case "kırmızı":
+echo 'kırmızıdır';
+break;
+case "mavi":
+echo 'mavidir';
+break;
+```
+&& KULLANIMI 
+Örnek:
+```
+<?php
+$not = 80;
+if($not >= 70 && $not <= 100) {
+    echo 'pekiyi';
+} elseif ($not >= 45 && $not < 70) {
+    echo 'iyi';
+} elseif ($not >= 0 && $not < 45) {
+    echo 'zayıf';
+} else {
+    echo 'hatalı not girişi.';
+}
+?>
+```
+sonuç : pekiyi
+Örnek:
+```
+<?php
+$not=80;
+if($not>65 && $not<100){
+    echo 'pekiyi';
+}
+elseif($not>45 && $not<65){
+    echo 'iyi';
+}
+elseif($not>0 && $not<45){
+    echo 'zayıf';
+}
+else {
+    echo 'hatalı giriş';
+}
+```
+                                                                                                 DÖNGÜLER
+
+                                    FOR DÖNGÜSÜ
+Örnek:
+```
+for($z=1; $z<=20; $z++){ 
+    echo $z . "
+" ;
+```
+Burada birden 20 ye kadar alt alta sıralar döngü oluşturur.
+
+Örnek:
+```
+//0'dan 20'ye kadar artacak döngüyü oluştur
+<?php
+for($l=0; $l<=20; $l = $l+2) {
+    echo $l . "
+";
+}
+    //sayıların çift olma durumunu kontrol et
+    if($l>=20) {
+    echo $l='sayılar çift olarak girildi !';
+        //ekrana çift sayıları 
+ etiketi kullanarak yazdır
+    }
+else {
+    echo 'sayılar çift olarak girilemedi !';
+}
+```
+
+                                                                          FOREACH DÖNGÜSÜ
+
+Diziler içerisine veri girebilme dizi oluşturmada  (array) komutu ile kullanılır.
+Foreach döngüsü nün for döngüsünden farkı koşul belirtmedn kullanılır .
+as komutu: Şu anlamdada kullanıla bilir şuda olabilir demektir . belirtilern değişkene eş değer olarak başka isimli bir değişken tanımlama ( as ) komutu ile olur .
+Örnek:
+```
+$dizi = array (1,2,3,4,5,6,7,8);
+foreach($dizi as $r) {
+echo "$r -";
+```
+sonuç: 1- 2- 3- 4- 5- 6- 7- 8-
+
+örnek:
+```
+$dizi = array (1,2,3,4,5,6,7,8);
+foreach($dizi as $r) {
+echo $r * 5 , "
+";
+```
+sonuç: 
+10
+15
+20
+25
+30
+35
+40
+
+Key: Anahtar 
+Value: Değer
+Örnek:
+```
+$u = array("ad"=>"hasan","soyad"=>"akoluk","yas"=>"28");
+foreach($u as $key=>$value){
+    echo "$key:$value". "
+";
+}
+```
+                                                                                      WHİLE DÖNGÜSÜ
+Örnek:
+```
+$e =0; 
+$s =0; 
+while($e<=10){ 
+$s+=$e; 
+$e++; 
+} 
+echo "<hr>toplam:$s";
+```
+sonuç: 55
+                                                                               DO WHİLE DÖNGÜSÜ 
+Örnek:
+```
+do{
+  echo $i ;
+  $i+=2;
+}
+while($i<=40);
+```
+sonuç: 0246810121416182022242628303234363840
+
+                                                                                 DİZİLER 
+Array komutu ile kullanılır  .yada []  içine kullanılarak kullanılır 
+örnek:
+```
+$ulkeler = array("türkiye","azerbaycan","türkmenistan");
+$ulkeler[0]="türkiye";
+$ulkeler[1]="azerbaycan";
+$ulkeler[2]="türkmenistan"; 
+echo $ulkeler[2];
+```
+sonuç: türkmenistan
+örnek:
+```
+$ulkeler = array("türkiye","azerbaycan","türkmenistan");
+$ulkeler[0]="türkiye";
+$ulkeler[1]="azerbaycan";
+$ulkeler[2]="türkmenistan"; 
+foreach($ulkeler as $n){
+    echo $n."
+";
+}
+
+```
+   
+                                                                                     ÇOK BOYUTLU (İÇ İÇE DİZİLER)
+
+Dizilerin ikinci bir array komutu ile iç içe dizi oluştuşmasına yarar.
+örnek:
+```
+$pompa = array( 
+    "4''pompalar" => array(1 => "4008/08",2 => "4006/13",3=>"4012/26") 
+); 
+print_r($pompa);
+```
+sonuç: Array ( [4''pompalar] => Array ( [1] => 4008/08 [2] => 4006/13 [3] => 4012/26 ) )
+
+                                                                        DİZİ ELEMANLARINI SIRALAMAK
+SHUFfLE: Rastgele  sayı atar. key value korumaz 
+ASORT: [DEĞER] küçükten büyüğe sıralamak için kullanılır .key value korur
+ARSORT: [DEĞER] büyükten küçüğe sıralar key value korur.
+KSORT: [ANAHTAR] küçükten büyüğe sıralar key value korur
+KRSORT: [ANAHTAR] büyükten küçüğe sıralar key value korur
+
+ÖRNEK:
+
+```
+$kitaplar = array(1=>"yazilim",2=>"mat",3=>"turkce");
+arsort($kitaplar);
+print_r($kitaplar);
+```
+SONUÇ: Array ( [1] => yazilim [3] => turkce [2] => mat ) 
+
+ÖRNEK:
+```
+$bulut = array("topoloji" => array(1=>"mavi",2=>"siyah",3=>"kirmizi")
+);
+   arsort($bulut);
+   print_r($bulut);
+```
+SONUÇ:  Array ( [topoloji] => Array ( [1] => mavi [2] => siyah [3] => kirmizi ) )
+
+                                                                            DİZİLERİ EKLEME SİLME
+UNSET: Dizileri silmek için kullanılır .
+Düzenlemek ise değişkenin yanına [ ]  işaretinin içine dğer sıra numarası girilir ve değişecek isim girilir 
+Örnek:
+```
+$marka = array("bosh","arcelik","beko","vestel");
+unset($marka[2]);
+$marka[3]="profilo";
+print_r($marka);
+```
+sonuç: Array ( [0] => bosh [1] => arcelik [3] => profilo )
+örnek:
+```
+$tr = array("iller"=> array(1=>"izmir", 2=>"istanbul",3=>"ankara",4=>"afyon")
+);
+$tr[5]="hatay";
+ksort($tr);
+print_r($tr);
+```
+sonuç:    Array ( [iller] => Array ( [1] => izmir [2] => istanbul [3] => ankara [4] => afyon ) [5] => hatay )
+    Burada listeye hatay ekledik.
+
+
+                                                                           FONKSİYON OLUŞTURMA 
+function komutu  ile uzun kodlar kullanmamak için kullanılır, aynı kodları tekrar yazmamıza engel olur.
+Return: çeviricidir değer döndürür.
+Örnek:
+```
+function toplama($sayi3 , $sayi4){
+    echo $sayi3 + $sayi4;
+}
+toplama(150,150);
+```
+sonuç:300
+
+Örnek:
+```
+function toplama($sayi3 , $sayi4){
+    //echo $sayi3 + $sayi4;
+    return $sayi3+$sayi4;
+}
+echo toplama(150,150);
+```
+sonuç: 300
+Burada return ile değer döndürdük .
+
+örnek:
+```
+function sayilar($sayii= NUll){
+if($sayii==NULL)
+{
+    echo"sayi";
+}
+elseif (!is_int($sayii)) { //Burada !is_int komutu intiger bir değer string e dönüştüğünd kullanılır .
+    echo"gecersiz sayi";
+} else {
+    echo $sayii;
+}
+}
+sayilar(5);
+```
+sonuç: 5
+örnek:
+```
+function bilgi ($türk= 1){
+    if($türk==1){
+        echo "değer giriniz";
+    }
+    
+    elseif(!is_int($türk)){
+        echo "geçersiz olay";
+    }
+else{
+    echo $türk;
+}
+}
+  bilgi("5");
+```
+sonuç: geçersiz olay
+
+örnek:
+```
+function bilgi ($türk= 1){
+    if($türk==1){
+        echo "değer giriniz";
+    }
+    
+    elseif(!is_int($türk)){
+        echo "geçersiz olay";
+    }
+else{
+    echo $türk;
+}
+}
+  bilgi();
+```
+sonuç: değer giriniz
+
+Örnek:
+```
+function bilgi ($türk= NULL){
+    if($türk==NULL){
+        echo "değer giriniz";
+    }
+    
+    elseif(!is_int($türk)){
+        echo "geçersiz olay";
+    }
+else{
+    for($ti=1; $ti<=$türk; $ti++){
+        echo "$ti";
+    }
+}
+}
+    bilgi(20);
+```
+sonuç: 1234567891011121314151617181920
+
+                                                                                            GLOBAL DEĞİŞKENLER
+
+Fonksiyon oluştururken değişken yazılacağı zaman bu değişkeni fonsiyon dışına yazamayız ve dışarı yazılan değişkeni kullana bilmek için GLOBAL  kodu kullanılır .
+
+Örnek:
+```
+$bn = 20;
+     function hsn($cv){
+         global $bn;
+         return $cv+$bn;
+     }
+        echo hsn(15);
+        
+```
+sonuç: 35
+
+Örnek:
+```
+$bn = 20;
+     $mn = 30;
+     function hsn($cv){
+         global $bn,$mn;
+         return $cv+$mn;
+     }
+        echo hsn(15);
+```
+sonuç: 45
+Örnek:
+```
+ $mat1=50;
+       $mat2=60;
+function okul($mat1,$mat2){
+    global$mat1,$mat2;
+    echo $mat1+$mat2;
+}
+    okul($mat1,$mat2);
+```
+sonuç: 110
+                                                                                        STRİNG FONKSİYONLARI
+strstr = Metin içerisinde aradığımız bir nesne veya harf varmı onu görmek için kullanılır varsa true yoksa false.
+strstr ve fonsiyon kullanımında parantez içine bir tane daha parantez açılır .
+örnek:
+```
+$isim="hasan akoluk";
+if(strstr($isim,"hasan"))
+ echo "var";
+ else 
+ echo"yok";
+```
+sonuç: var
+strlen: yazmış olduğumuz değerin uzunluğunu gösterir yani harf sayısını (boşluklar ve noktalama işaretleri dahil)
+Örnek:
+```
+$arkadas="ilhan aykut rahmi";
+echo strlen($arkadas);
+```
+sonuç: 17
+substr: yazılan değerin içinden sadece belirtilen kadar harf yazdırmak için kullanılır . önce metin girilir sonra girilen değerin kaçıncı harfinden  nereye kadar yazdırılcaksa o değer girilir
+örnek:
+```
+$ulku="türk bayrağı";
+echo substr($ulku,0,8);
+```
+sonuç: türk ba
+
+str_replace:  Daha önce belirtilen bir değeri sonradan değiştirmeye yarar.
+örnek:
+```
+$cicek="gül papatya manolya yasemin";
+echo str_replace("papatya","karanfil",$cicek);
+```
+sonuç:  gül karanfil manolya yasemin
+
+ strtoupper
+```
+$cicek="gül papatya manolya yasemin";
+echo strtoupper($cicek); // tüm harfleri büyük yapar
+son
+```
+strtolower
+```
+$cicek="gül papatya manolya yasemin";
+echo strtolower($cicek); // tüm harfleri küçük yazar
+```
+Diğer string fonksiyonlar
+```
+echo ucfirst($ulku); // baş harfi büyük yazar
+echo ucwords($ulku); // her kelimenin  baş harfini büyük yapar
+$sektor="muhasebe tornacı kalıpçı bilişim";
+echo substr($sektor,8);
+$sk=60;
+function deneme($hj){
+    global $sk;
+    return($hj+$sk);
+}
+echo deneme(20);
+$denemee="güzel izmir";
+if (strstr($denemee,"ü")){
+    echo"var";
+}
+else{
+ echo"yok";
+}
+$uo ="hayat eve sığar";{
+echo substr($uo,0,6);
+}
+```
+                                                                                                  MATEMATİKSEL FONKSİYONLAR
+FLOOR: Ondalıklı sayıları yuvarlamak için kullanılır . Noktadan önceki sayıyı yazar.
+örnek:
+```
+$sayi5= 50;
+$sayi6= 40.4988;
+echo floor($sayi6);
+```
+sonuç: 40
+
+CEİL : Ondalıklı sayılarda noktadan sonra olan sayıyı bir üst sayıya yuvarlar
+örnek:
+```
+$sayi5= 50;
+$sayi6= 40.4988;
+echo ceil($sayi6);
+```
+sonuç: 41
+
+ROUND: Noktadan sonraki sayı 5 den büyük ise bir üst sayıya , değil ise bir alt sayıya yuvarlar.
+örnek:
+```
+$sayi5= 50;
+$sayi6= 40.6456;
+echo round($sayi6);
+```
+sonuç: 41
+
+RAND: Rastgele sayı üretir( parantez içine yazıldığında yazılan sayılar arası sayı üretir 
+örnek:
+```
+echo rand(100,900);
+```
+
+SQRT: Karekök hesaplamada kullanılır 
+örnek:
+```
+echo sqrt(50);
+```
+sonuç: 7.0710678118655
+
+MAX: En yüksek değeri yazdırır.
+örnek: 
+```
+echo max(50,15,150,500);
+```
+sonuç: 500
+MİN : En küçük değeri alır 
+```
+echo min(10,5,450,876);
+```
+sonuç: 5
+                                                                            DATE/TİME FONKSİYONLARI 
+```
+date_default_timezone_set : Anlık tarih saat gösterir
+```
+örnek:
+date_default_timezone_set("Europe/Isstanbul");
+echo date("y-m-d h:i:s");
+
+                                                                          DİZİ FONKSİYONLARI
+örnek:
+```
+$koltuk = array("bellona","istikbal","yataş","bambi");
+$fiyat = array(1250,500,600,700);
+print_r($koltuk);
+```
+sonuç:Array ( [0] => bellona [1] => istikbal [2] => yataş [3] => bambi )
+
+örnek:
+```
+$koltuk = array("bellona","istikbal","yataş","bambi");
+$fiyat = array(1250,500,600,700);
+var_dump($koltuk);
+```
+sonuç:  
+```
+C:\wamp64\www\index.php:257:
+array (size=4)
+  0 => string 'bellona' (length=7)
+  1 => string 'istikbal' (length=8)
+  2 => string 'yataş' (length=6)
+  3 => string 'bambi' (length=5)
+```
+COUNT: kaç tane eleman olduğunu gösterir.
+
+örnek:
+```
+$koltuk = array("bellona","istikbal","yataş","bambi");
+echo count($koltuk);
+```
+sonuç: 4
+
+İS_ARRAY: Elemanların dizimi değilmi olduğunu belirler (true/false)
+örnek:
+```
+$iş = array("muhasebe","tornacı","bakımcı");
+var_dump(is_array($iş));
+```
+sonuç:  
+```
+C:\wamp64\www\index.php:260:boolean true
+```
+
+ARRAY_PUSH:  Dizinin sonuna yeni eleman ekler 
+örnek:
+```
+$iş = array("muhasebe","tornacı","bakımcı");
+array_push($iş,"bakkal","kırtasiye"); 
+var_dump($iş);
+```
+sonuç: 
+```
+C:\wamp64\www\index.php:262:
+array (size=5)
+  0 => string 'muhasebe' (length=8)
+  1 => string 'tornacı' (length=8)
+  2 => string 'bakımcı' (length=9)
+  3 => string 'bakkal' (length=6)
+  4 => string 'kırtasiye' (length=10)
+```
+ARRAY_POP: Dizideki son değeri siler
+örnek:
+```
+$iş = array("muhasebe","tornacı","bakımcı");
+array_pop($iş);
+```
+İN_ARRAY: İf koşul döngüsü ilede kullanılır.Dizinin içinde belirtilen değerin olup olmadığını gösterir
+örnek:
+```
+$iş = array("muhasebe","tornacı","bakımcı");
+if (in_array("tornacı", $iş))
+    {
+        echo"var";
+    }
+else{
+    echo"yok";
+}
+```
+sonuç: var
+
+                                                                                                       HTML FORM TASARIMI
+META : Türkçe dil sorunu olmaması için head başlığı içerisine meta komutu verilir 
+Örnek:
+<meta charset="UTF-8">
+<TİTLE></TİTLE>     Head başlığı içine yazılır . İnternet tarayıcısının başlığını belirler
+İNPUT TYPE : Giriş tipi
+örnek:
+
+```
+<html>
+    <head>
+          <meta charset="UTF-8">    
+         <title>web örnek</title>
+   </head>
+    <body>
+    <form action="" method="GET">
+    <input type="text" name="ad" placeholder="Adınızı giriniz"> // ad adında textbox oluşturur
+
+    <input type="text" name="soyad" placeholder="sayadınızı giriniz"> soyad adında textbox oluşturur
+
+    ERKEK<input type="radio" name="Cinsiyet" value="Erkek"> // radiobutton oluşturur noktalı seçme .
+
+    KADIN<input type="radio" name="Cinsiyet" value="KADIN"> // radiobutton oluşturur noktalı seçme .
+
+<input type="email" name="mail" placeholder="e-mail"> // e mail gönderme oluşturur
+
+<input type="submit" name="kaydet"value="gönder"> // gönderme butonu oluşturur
+
+<input type="reset" name="temizle"value="temizle"> // temizleme butonu oluşturur
+
+    </form>  
+    </body>
+     </html>
+```
+
+                                                                                              GET İLE DEĞER DÖNDÜRMEK
+
+```
+<html>
+<head>
+<meta charset="UTF-8">
+<title>web_ornek</title>
+<body>
+<form action="" method="GET">  
+<input type="text" name="ad" placeholder="adinizi giriniz">
+
+<input type="text" name="soyad" placeholder="soyadinizi giriniz">
+
+erkek <input type="radio" name="cinsiyet" value="erkek">
+
+kadın <input type="radio" name="cinsiyet" value="kadın">
+
+<input type="email" name="mail" placeholder="@gmail.com">
+
+<input type="submit" name="kaydet" value="kaydet">
+<input type="reset" name="temizle" value="temizle">
+</form>
+</hr>
+<?php
+if(@$_GET["kaydet"]){
+    //print_r($_GET); // Girilen değerleri dizi haline getirir.
+    echo"
+    ad: <b>$_GET[ad]</b>
+
+    soyad: <b>$_GET[soyad]</b>
+
+    cinsiyet: <b>$_GET[cinsiyet]</b>
+
+    mail: <b>$_GET[mail]</b>
+";
+}else{
+    echo "kaydedilmedi";
+}
+?>
+</body>
+</head>
+</html>
+```
+                                                                     POST İLE DEĞER DÖNDÜRMEK
+örnek:
+```
+<html>
+<head>
+<meta charset="UTF-8">
+<title>web_ornek</title>
+<body>
+<form action="" method="POST">  
+<input type="text" name="ad" placeholder="adinizi giriniz">
+
+<input type="text" name="soyad" placeholder="soyadinizi giriniz">
+
+erkek <input type="radio" name="cinsiyet" value="erkek">
+
+kadın <input type="radio" name="cinsiyet" value="kadın">
+
+<input type="email" name="mail" placeholder="@gmail.com">
+
+<input type="integer" name="tel" placeholder="tel">
+
+<input type="textField" name="adres" placeholder="adres">
+
+<select name="gun">
+<?php
+for($gun=1;$gun<=31;$gun++)
+  echo '<option value="'.$gun.'">'.$gun.'</option>';
+?>
+</select>
+<?php $ay = array ("ocak","şubat","mart","nisan","mayıs","haziran","temmuz","ağustos","eylül","ekim","kasım","aralık");
+?>
+  <select name="ay">
+  <?php foreach($ay as $aylar){
+      echo'<option value="'.$aylar.'">'.$aylar.'</option>';
+  }
+  ?>
+  
+  </select>
+  <select name="yil">
+  <?php for($yil=1900; $yil<=date("Y"); $yil++)
+      echo '<option value="'.$yil.'">'.$yil.'</option>';
+  ?>
+  </select>
+  
+
+
+<input type="submit" name="kaydet" value="kaydet">
+<input type="reset" name="temizle" value="temizle">
+</form>
+</hr>
+<?php
+if(@$_POST["kaydet"]){
+    //print_r($_POST); // Girilen değerleri dizi haline getirir.
+    echo"
+    ad: <b>$_POST[ad]</b>
+
+    soyad: <b>$_POST[soyad]</b>
+
+    cinsiyet: <b>$_POST[cinsiyet]</b>
+
+    mail: <b>$_POST[mail]</b>
+
+    tel: <b>$_POST[tel]</b>
+
+    dogum: <b>$_POST[gun]/$_POST[ay]/$_POST[yil]</b>
+
+    adres: <b>$_POST[adres]</b>
+";
+    
+}else{
+    echo "kaydedilmedi";
+}
+?>
+</body>
+</head>
+</html>
+```
+                                                                                                            DOSYA YÜKLEME (FİLE UPLOADİNG) 
+
+```
+<form action=""method="POST" enctype="multipart/form-data">
+    </form>
+```
+Not: Dosya yükleme işlemlerinde form içerisinde bu kalıp kullanılmalıdır .
+<h1></h1> Bu komut başlık eklemek için kullanılır .
+pathinfo extension : yol bilgisi uzantısı
+pathinfo : yol bilgisi
+uniqid : dosya adı belirlerken kullanılır.
+move_uploaded_file : Dosya yüklemek için kullanılır.  Anlamı yüklenen dosyayı taşı . dosya yükleme gerektriren işlemlerde kullanılması gerekir.
+multipart: Çok parçalı anlamına gelir form - data oluşturmak için kullanılır
+Örnek:
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="POST" enctype="multipart/form-data">
+    <input type="file" name="file">
+
+    <input type="submit" name="submit"> 
+    </form>
+    <?php
+    
+    if(@$_POST["submit"]){
+       if($_FILES["file"]["size"]>0){
+         // print_r($_FILES["file"]["name"]);
+          $uzanti=pathinfo($_FILES["file"]["name"], PATHINFO_EXTENSION);
+           $yeniad = "uploads/". uniqid(). "." . $uzanti;
+           if(move_uploaded_file($_FILES["file"]["tmp_name"], $yeniad)){
+               echo "Başarıyla yüklendi";
+               echo"<img src='$yeniad' width='300'>";
+           }else{
+               echo"dosya yüklenirek hata oluştu";
+           }
+       }else{
+           echo"dosya yükleyiniz";
+       }
+        // print_r($_FILES["file"]); Bu kod dosyanın ve değerin tipini adını uzantısını yazdırır.
+    }else{
+        echo"tıklanmadı";
+    }
+    
+    
+    ?>
+</body>
+</html>
+```
+
+                                                                                                                    SESSİON  
+
+Oturum işlerinde kullanılan fonksiyonlardır. 
+Üye giriş işlemleri ,sepete ekleme işlemleri, sepete eklenen ürünün program kapatıldığında yinede sepette kalması session sayesinde olur .
+Veb tarayıcısının sunucusunda çalışır.
+Bir sayfada yazdırılan bir ismin başka bir sayfaya çekilmesindede kullanılır .
+session destroy();  Bütün dizileri ve elemanları siler
+örnek:
+```
+<?php
+session_start();
+$_SESSION["ad"]="canım";
+$_SESSION["soyad"]="annem";
+//$_SESSION["üyeler"]= array("hasan","ahmet","nazmi","kubat");
+    //echo $_SESSION["üyeler"][3]; //üyeler dizisinden 3. değeri yazdırır.
+   // print_r($_SESSION["üyeler"]); // bütün dizi elemanlarını göstermeye yarar
+//echo"selamun_aleyküm:<b>$_SESSION[ad]
+$_SESSION[soyad]</b>";
+//echo unset($_SESSION["soyad"]); // belirtilen nesneyi silmek için kullanılır 
+echo($_SESSION["soyad"]);
+?>
+```
+örnek:
+
+```
+<?php
+session_start();
+$_SESSION["meyve"]="elma 2 tl";
+$_SESSION["sebze"]="marul 4 tl";
+//$_SESSION["birleştir"]= array("elma","marul","meyve","sebze");
+echo "fiyatlar: 
+$_SESSION[meyve]
+$_SESSION[sebze]";
+?>
+```
+sonuç:  
+fiyatlar:
+elma 2 tl
+marul 4 tl
+
+                                                                                                           SESSİON İLE KULLANICI GİRİŞ ÇIKIŞ İŞLEMLERİ
+error_reporting(0);  Bu komut sıfır hata ile çalışmayı sağlar ve @ işaretini kullanmamıza gerek kalmaz.
+```
+header("Location: uye.php"); // bu komut diğer sayfalara bağlantı sağlar.
+```
+
+```
+<?php session_start(); ?> // Bu komut sassion işlemlerine başlamak için sayfanın  en başına yazılır.
+```
+
+ÖRNEK:
+```
+<?php session_start(); ?>
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>kullanıcı giriş çıkışı</title>
+ </head>
+ <body>
+     <form action=" " method="POST">
+     <input type="text" name="username" placeholder="kullanıcı adı" required>
+
+     <input type="password" name="password" placeholder="******" required>
+
+
+     <input type="submit" name="submit" value="giriş yap">
+     </form>
+     <?php
+     if(@$_POST["submit"]){
+     if (@$_POST["username"]=="hasan" && @$_POST["password"]=="123456"){
+         $_SESSION["kadi"]=$_POST["username"];
+         header("Location: uye.php"); // diğer sayfaya geçiş yapmamızı sağlar
+     }else{
+         echo"yalnış giriş yaptınız !!";
+     }   
+    }       
+     ?>
+ </body>
+ </html>
+```
+ikinci sayfaya aktarma kodları aşağıda:
+```
+<?php
+session_start();
+echo"Sayfaya hoş geldiniz:<b>$_SESSION[kadi]</b>";
+```
+
+                                                                                                                         COOKİE (ÇEREZLER)
+Kullanıcının bilgisayarı tarafından depolanan dosyalardır.
+Bir siteye giridiğimizde eğer o sitede cookie varsa bilgisayar kendine depolar.
+time : saniye belirler , oluşturduğumuz veri belirtilen saniye kadar kullanılır
+ÖRNEK:
+```
+<?php
+setcookie("ad","hasan",time()+10);
+//setcookie("ad"," ",time()-3600); Bu komut yazılan değeri silmek için kulllanılır
+echo $_COOKIE["ad"];
+?>
+```
+ sonuç : hasan
+                                                                                                     
+                                                                                                        DOSYA DİZİN İŞLEMLERİ
+
+                                                                                                                      İNCLUDE
+
+
+ include: Dışarıdaki bir dosyayı çalışmış olduğumuz dosyaya dahil eder.
+
+örnek:
+1.sayfa
+```
+<?php
+echo'türkiye';
+echo"";
+include'include_yedek.php';
+?>
+```
+2.sayfa
+```
+<?PHP 
+echo'azerbaycan';
+?>
+```
+sonuç: türkiye
+                azerbayacan
+
+                                                                                                  REQUİRE
+1. syafa
+```
+<?php
+echo'tek millet';
+echo"
+";
+require'require_yedek.php';
+?>
+```
+2.sayfa
+```
+<?php
+echo'tek millet';
+echo"
+";
+require'require_yedek.php';
+?>
+```
+
+                                                                                                                          CAPTCHA
+
+Bir iletişim formu oluşturduğumuzda formu doldurduğumuzda doğrulama kodu göndermek örneğin robot değilim veya  doğrulama resimlerini seçme gibi seçenekler sunmak için kullanılır .
++
+örnek:
+
+
+hidden: input ta kullanılır ve daha önceden girdiğimiz text lerin çerçevelerini görünmez yapar
+
+Örnek:
+```
+<form action="" method="POST">
+<input type="text" name="ad" placeholder="ad soyad "required>
+
+<input type="email" name="email" placeholder="ornek@gmail.com"required>
+
+<input type="text" name="captcha" placeholder="doğrulama kodu giriniz"required> <?= $kontrol =rand(1000,9999) ?>
+
+<input type="hidden" name="hcaptcha" value="<?=  $kontrol ?>">
+<input type="submit" name="submit" placeholder="gönder">
+</form>
+<?php
+if(@$_POST["submit"]){
+    if($_POST["captcha"]==$_POST["hcaptcha"]){
+        echo"<b>Bilgiler gönderildi</b>";
+    }else{
+        echo"<b>Doğrulama kodu veya giriş yalnış</b>";
+    }
+}
+?>
+```
+sonuç:
+
+
+                                                                                                ZİYARETCİNİN GERÇEK IP SİNİ ÖĞRENME
+
+!empty : Eğer Varsa anlamaına gelir. ünlem işareti koymadığın zaman yoksa anlamına gelir
+
+HTTP_X_FORWARDED_FOR : Bu komut kullanıcı proxy adresi kullanıyormu anlamına gelir.
+HTTP_CLIEND_IP : Kullanıcı direkt olarak internetemi çıkıyo anlamına gelir. ilk önce if ile bu komut oluştururlur
+ROMOTE_ADDR : Sayfayı görüntüleyen kullanıcının IP adresidir.  
+return deyimi bir fonksiyonda kullanıldığında içinde bulunduğu fonksiyonun çalışmasını sona erdirir
+
+örnek:
+```
+<?php
+function ip (){
+    if(!empty($_SERVER["HTTP_CLIEND_IP"])){
+        $ip = $_SERVER["HTTP_CLIENT_IP"];
+    }elseif(!empty($_SERVER["HTTP_X_FORWARDED_FOR"])){
+        $ip = $_SERVER["HTTP_X_FORWARDED_FOR"];
+    }else{
+        $ip= $_SERVER["REMOTE_ADDR"];
+        
+    }
+    return $ip;
+}
+echo $ip=ip();
+?>
+```
+
+                                                                                                                                                           IP ADRESİNDEN KONUM BULMAK
+
+file_get_contents : dosya içeriği almak için kullanılır.
+csm veri tipi: mobil veya başka    programlama dilleri arasında veri alışverişi yapar.
+json_decode :  verileri alt alta sıralamak için kullanılır. 
+```
+ "query": "88.230.153.248",
+    "status": "success",
+    "continent": "Asia",
+    "continentCode": "AS",
+    "country": "Turkey",
+    "countryCode": "TR",
+    "region": "35",
+    "regionName": "Izmir",
+    "city": "Izmir",
+    "district": "",
+    "zip": "35230",
+    "lat": 38.4067,
+    "lon": 27.14,
+    "timezone": "Europe/Istanbul",
+    "offset": 10800,
+    "currency": "TRY",
+    "isp": "Turk Telekomunikasyon A.S",
+    "org": "TurkTelecom",
+    "as": "AS9121 Turk Telekomunikasyon Anonim Sirketi",
+    "asname": "TTNet",
+    "mobile": false,
+    "proxy": false,
+    "hosting": false
+```
+
+örnek: 
+```
+<?php
+function ip(){
+    if(!empty($_SERVER["HTTP_CLEIND_IP"])){
+    $ip = $_SERVER["HTTP_CLEINT_IP"];
+    } elseif(!empty($_SERVER["HTTP_X_FORWARDED_FOR"])){
+        $ip = $_SERVER["HTTP_X_FORWARDED_FOR"];
+    }else{
+        $ip = $_SERVER["REMOTE_ADDR"];
+    }
+    return $ip;
+}
+//echo $ip=ip();
+$api = file_get_contents("http://ip-api.com/json/88.230.153.248");
+//print_r($api);
+$dec = json_decode($api);
+//print_r($dec);
+echo "ülke:$dec->country($dec->countryCode)
+şehir:$dec->city($dec->zip)
+";
+?>
+```
+sonuç:
+ülke:Turkey(TR)
+şehir:Izmir(35230)
+
+                                                                                                                             DÖVİZ KURLARINI ÇEKMEK
+
+simplexml_load_file : basit yükleme dosyası anlamına gelir ve internet sitesi adreslerini çekmek için kullanılır.
+Bu derste xml ile dosyayı alıp işleme yapılır.
+Nesne ifade ederken -> bu işaret kullanılır .
+currency : Para birimi
+Element Object :  öğe nesne
+Currency Code : para birimi kodu
+ForexBuying : kur alış fiyatı
+ForexSelling: kur satış fiyatı
+
+Örnek:
+```
+<?php 
+$kur = simplexml_load_file("https://www.tcmb.gov.tr/kurlar/today.xml"); 
+foreach($kur->Currency AS $kr){ 
+    if($kr["Kod"]=="USD"){ 
+        echo"USD"."Alis:$kr->ForexBuying
+USD"."Satis:$kr->ForexSelling","
+"; 
+    }if($kr["Kod"]="EUR"){ 
+        echo"EUR:"."Alis:$kr->ForexBuying
+EUR:"."Satis:$kr->ForexSelling"; 
+    }break; 
+} 
+?>
+```
+sonuç:
+ USDAlis:7.7195
+USDSatis:7.7334
+EUR:Alis:7.7195
+EUR:Satis:7.7334
+
+                                                                                                                                                                          
+
+                                                                                                                                                                                      MAİL GÖNDERME İŞLEMLERİ
+
+Örnek:
+```
+<form action="" method="POST">
+ad_soyad:<input type="text" name="adsoyad"required>
+
+email:<input type="email" name="email"required>
+
+başlık:<input type="text" name="baslik"required>
+
+mesajınız:<textarea name="mesaj" cols="30" rows="10"></textarea> 
+
+
+<input type="submit" name="submit" value="gönder">
+</form>
+<hr>
+<?php
+error_reporting(0);
+if(@$_POST["submit"]){
+    $email= $_POST["email"];
+    $baslik= $_POST["baslik"];
+    $mesaj= $_POST["mesaj"];
+    $mesaj = $_POST["adsoyad"];
+    $headers = "From: akoluk3535@gmail.com";
+}
+$mil = mail($email,$baslik,$mesaj,$headers);
+if($mil){
+    echo"Gönderildi";
+}else{
+    echo"gönderilirken hata oluştu";
+}
+?>
+```
+
+
+                                                                                                                                                                   PDO SINIFINI AKTİF ETMEK
+
+PDO : pdo nun amacı veri tabanı yapmadan önce site içi güvenliğini sağlamak ve hackerlerin veri çalmasını engellemek için kullanılır.
+
+Öncelikle wampserver ikonuna tıklayarak PHP -PHP EXTENSİON -PHP PDO MYSQL tıklanır
+short open tag : veri tabanında hataları yok etme için kullanılır.
+
+bin - apache - bin - php.ini  dosyasını wordpad ile açıp pdo mysql seçeneğindeki (;) noktalı virgül silinir. 
+
+                                                                                                                                                                PHP MYADMİN VERİ TABANI TASARIMI
+
+İnternet tarayıcısında localhostun yanına PHP MYADMİN yazılarak açılır.
+
+                                                                                                                                                               VERİ TABANI BAĞLANTISI
+
+try: kodlarımızın çalıştığı ve olduğu yerdir 
+catch: hata yakalama bölümüdür hatalar yakalanır.
+Bu komutlar veri tabanına bağlanmak için kullanıır .
+PDOException : Hata yakalamak için catch komutu içine yazılır . pdo istisnası anlamanı gelir
+getmessage(); Bu komut catch içinde kullanılır ve bize hatayı mesaj olarak verir. mesaj al anlamına gelir
+
+Veri tabanı bağlantısı yapa bilmek için aşağıdaki yol izlenir.
+1. Sunucumuzun adresi
+2. Veri tabanı adımız
+3. Veri tabanı kullanıcı adımız
+4. Kullanıcı şifresi
+
+ ornek:
+```
+<?php
+define("host","localhost");
+define("dbad","ornek");
+define("kulad","root");
+define("pass","");
+try{
+   $baglan = new PDO("mysql:host=".host.";dbname=".dbad."",kulad,pass);
+   $baglan->exec("SET NAMES 'utf8';SET CHARSET 'utf8'");
+}catch(PDOException $yol){
+     echo $yol->getmessage();
+}
+?>
+```
+Benim örneğim:
+```
+<?php 
+$HOST = "localhost";
+$dbad = "ornek";
+$kulad = "root";
+$pass = "";
+try{
+$baglan = new PDO("mysql:host=".$HOST.";dbad=".$dbad."",$kulad,$pass);
+}catch(PDOExcaption $s){
+ echo $s->getmessage();
+}
+?>
+```
+
+
+
+
+                                                                                                                                                                                   INSER EKLEME İŞLEMLERİ
+
+bindValue : içerisine hem değişken hemde değer ekleye bilmek için kullanılır.
+param_str :  girilecek değerin string yani yazı tipinde olacağını belirtir
+param_int: girilecek değerin int yani sayı tipindfe olacağını beliler.
+
+```
+<?php
+require_once"db_baglantisi.php";
+$baslik ="";
+$aciklama ="";
+$d = $baglan->prepare("INSERT INTO `haberler`(`baslik`,`aciklama`) VALUES('bmw' ,'e30')");
+$d->bindValue("bmw",$baslik,PDO::PARAM_STR);
+$d->bindValue("e30",$aciklama,PDO::PARAM_STR);
+if($d->execute()){
+    echo"Eklendi";
+}else{
+    echo"hata";
+}
+?>
+```
+
+                                                                                                                                                                                 SELECT LİSTELEME İŞLEMLERİ
+
+```
+<?php
+require_once"db_baglantisi.php"; // önce bağlantı yapılan sayfa çekilir.
+$s = $baglan->prepare("SELECT * FROM `haberler`");
+if($s->execute()){
+   ?>
+  <table border="1" cellpadding="5">
+  <tr>
+   <th>ID</th>
+   <th>Başlık</th>
+   <th>Açıklama</th>
+   <th>Tarih</th>
+  </tr>
+  <?php  while($a= $s->fetch(PDO::FETCH_ASSOC)){ ?>
+  <tr>
+  
+   <td><?= $a["id"]?></td> 
+   <td><?= $a["baslik"]?></td> 
+   <td><?= $a["aciklama"]?></td> 
+   <td><?= $a["tarih"]?></td> 
+  
+  </tr>
+  <?php } ?>
+  </table>
+   <?php
+}else{
+    echo"hata";
+}
+?>
+```
+
+
+                                                                                                                                                                                   ORDER BY SIRALAMA İŞLEMLERİ
+
+ASC : Artan sıralamada kullanılır, küçükten büyüğe sıralama yapar.
+DESC: Büyükten küçüğe sıralamada kullanılır.
+
+Örnek:
+```
+<?php
+require_once"db_baglantisi.php";
+$a = $baglan->prepare("SELECT * FROM `haberler` ORDER BY `id` DESC ");
+if($a->execute()){
+    ?>
+  <table border="5" cellpadding="5">
+  <tr>
+   <th>ID</th>
+   <th>BAŞLIK</th>
+   <th>AÇIKLAMA</th>
+   <th>TARİH</th>
+  </tr>
+  <?php  while($z=$a->fetch(PDO::FETCH_ASSOC)){ ?>
+  <tr>
+  <td><?= $z["id"]?></td>
+  <td><?= $z["baslik"]?></td>
+  <td><?= $z["aciklama"]?></td>
+  <td><?= $z["tarih"]?></td>
+  
+  </tr>
+  <?PHP } ?>
+  </table>
+  <?php
+}else{
+    echo"Hata oluştu";
+}
+?>
+```
+
+
+                                                                                                                                                                                          WHERE KOŞUL KULLANIMI
+
+OR : Ve anlamında kullanılır.
+
+örnek:
+```
+<?php
+require_once"db_baglantisi.php";
+$r = $baglan->prepare("SELECT * FROM `haberler` WHERE `İD`= 19 OR `id` = 30 ");
+if($r->execute()){
+?>
+<table border="1" cellpadding="5">
+<tr>
+<th>ID</th>
+<th>BAŞLIK</th>
+<th>AÇIKLAMA</th>
+<th>TARİH</th>
+</tr>
+<?php while($z = $r->fetch(PDO::FETCH_ASSOC)){ ?>
+<tr>
+<td><?=$z["id"]?></td>
+<td><?=$z["baslik"]?></td>
+<td><?=$z["aciklama"]?></td>
+<td><?=$z["tarih"]?></td>
+</tr>
+<?php }?>
+</table>
+<?php
+}else{
+    echo"Hata oluştu";
+}
+?>
+```
+
+
+                                                                                                                                                                            LİKE KULLANIMI
+
+LIKE: Gibi anlamına gelir , şunun gibi bnun gibi v.s
+a% : Tabloda a ile başlayan verileri getirir.
+%futbol% : içerisinde futbol geçen satırı alır.
+%a : Sonu a ile biten satırları alır.
+
+Örnek:
+
+```
+<?php
+require_once"db_baglantisi.php";
+$h = $baglan->prepare("SELECT * FROM `haberler` WHERE `aciklama` LIKE 'e%' "); // açıklama bölümünde başında e geçen verileri aldık.
+if($h->execute()){
+  ?>
+  <table border="5" cellpadding="5">
+  <tr>
+  <th>ID</th>
+  <th>BAŞLIK</th>
+  <th>AÇIKLAMA</th>
+  <th>TARİH</th>
+  </tr>
+  <?php while($k = $h-> fetch(PDO::FETCH_ASSOC)){ ?>
+  <tr>
+  <td><?= $k["id"]?></td>
+  <td><?= $k["baslik"]?></td>
+  <td><?= $k["aciklama"]?></td>
+  <td><?= $k["tarih"]?></td>
+  </tr>
+  <?PHP } ?>
+  </table>
+  <?php  
+}else{
+    echo"İşlem başarısız!";
+}
+?>
+```
+
+
+                                                                                                                                                                        UPDATE GÜNCELLEME 
+
+```
+<?php
+require_once"db_baglantisi.php";
+$z = $baglan->prepare("UPDATE `haberler` SET `baslik` = :baslik , `aciklama` = :aciklama  WHERE `id` = :id  ");
+$z->bindValue(":baslik","degisti",PDO::PARAM_STR);
+$z->bindValue(":aciklama","degistii",PDO::PARAM_STR);
+$z->bindValue(":id",1,PDO::PARAM_INT);
+$z->execute();
+?>
+<?php
+require_once"db_baglantisi.php";
+$h = $baglan->prepare("SELECT * FROM `haberler` WHERE `id` = 1 ");
+if($h->execute()){
+  ?>
+  <table border="5" cellpadding="5">
+  <tr>
+  <th>ID</th>
+  <th>BAŞLIK</th>
+  <th>AÇIKLAMA</th>
+  <th>TARİH</th>
+  </tr>
+  <?php while($k = $h-> fetch(PDO::FETCH_ASSOC)){ ?>
+  <tr>
+  <td><?= $k["id"]?></td>
+  <td><?= $k["baslik"]?></td>
+  <td><?= $k["aciklama"]?></td>
+  <td><?= $k["tarih"]?></td>
+  </tr>
+  <?PHP } ?>
+  </table>
+  <?php  
+}else{
+    echo"İşlem başarısız!";
+}
+?>
+```
+
+
+                                                                                                                                                                                 DELETE SİLME
+
+```
+<?php
+require_once'db_baglantisi.php';
+$sil = $baglan->prepare("DELETE FROM `haberler` WHERE `id`= :id ");
+$sil->bindValue(":id",31,PDO::PARAM_INT);
+if($sil->execute()){
+    echo"Silindi";
+}else{
+    echo"Hata oluştu!";
+}
+?>
+```
+
+
+                                                        BLOG SİTESİ PROJESİ
+
+ class"btc btc-primary";    : Bu komut css komutudur html a href ile oluşturduğumuz link in önüne yazılarak o linke still(şekil) verir. 
+
+
+
+
+
+
+                                                    
+
+
+
+
+
+
+ class"btc btc-primary"; Butonları veya seçenekleri Mvi buton haline getirir.
+                                   
+
+                                        outofocus komutu 
+
+
+ 
+Giriş çıkış işlenlerinde kullanıcı adı ve parola yazılan text yerine imleci varsayılan olarak 
+hangi text te bulunduracaksan imleç orada başlar.
+
+
+
+
+
+
+                                              İNDEX SAYFASI TASARIMI
+
+
+
+İlk önce giriş çıkış yani login ve logut kısmını session komutu ile oluşturacağım için 
+sayfanın en başına <?php session_start(); ?> bu komutu yazdım
+Daha sonra
+
+<div class="form-group">
+<input class="form-control" placeholder="Kullanıcı Adı" name="username" type="text" autofocus required>
+ </div>
+<div class="form-group">
+<input class="form-control" placeholder="******" name="password" type="password"required>
+</div>
+ <!-- Change this to a button or input when using this as a form -->
+<input type="submit" name="submit" value="Giriş" class="btn btn-lg btn-success btn-block">
+
+bu komutlar ile sayfanın form kısmını kullanıcı adı şifre ve giriş butonu kısmını tasarlamış oldum
+
+Sonrasında 
+
+<?php 
+       
+       if(@$_POST["submit"]){
+           $sifre = md5($_POST["password"]);
+           if(@$_POST["username"]=="hasan akoluk" && $sifre=="146118dd4e3c58f7092c2be101329465"){
+               $_SESSION["kullanici"]=1;
+               $_SESSION["username"]=$_POST["username"];
+               header("Location: anasayfa.php");
+               return true;
+           }else{
+               echo"<p style='text-align: center; color:red;'>Kullanıcı adı veya parola yalnış</p>";
+               return false;
+           }
+       }
+    
+         ?>
+
+
+bu komutlar ile session ve post ile giriş ve çıkış işlemini kodlamış oldum 
+
+
+
+
+
+
+
+
+
+
+                                           RQD-MUNU.PHP SAYFASININ TASARIMI
+
+
+
+NAVİGATİON kod kısmını komple kopyalayarak oluşturdum Buradaki amaç menu bölümünü diğer sayfalarda
+her seferinde  uğraşmamak için bu sayfayı oluşturdum ve diğer sayfalara menuleri 
+  <?php require_once'rqd-menu.php'; ?> kodu ile çektim.
+
+
+
+
+
+
+
+
+                                  
+                                     ANASAYFA SAYFA TASARIMI
+
+<div id="wrapper"> KOmutunun altındaki rqd-menu.php sayfasına kopyalamış olduğum NAVİGATİON 
+<Nav></Nav> tag larının arasını sildikten sonra rqd-menu.php sayfasını require_once komutu ile çekiğ
+<?php require_once"rqd-menu.php"; ?> menüleri getirmiş oldum.
+Daha sonra     <h1 class="page-header">Anasayfa</h1> bu komut ile sayfa başlığını belirledim
+
+                        
+
+
+
+
+
+
+
+                                  BLOG.PHP SAYFA TASARIMI
+
+
+
+
+
+Önce  <title>Bloglar - Panel</title> komutu ile tarayıcıdaki başlığı oluşturdum
+Daha sonra <div id="wrapper"> KOmutunun altındaki rqd-menu.php sayfasına kopyalamış olduğum NAVİGATİON 
+<Nav></Nav> tag larının arasını sildikten sonra rqd-menu.php sayfasını require_once komutu ile çekiğ
+<?php require_once"rqd-menu.php"; ?> menüleri getirmiş oldum.
+Daha sonra   <div class="col-lg-12"><h1 class="page-header">Blog Yazıları</h1></div> bu komut ile 
+sayfanın başlığını oluşturmuş oldum 
+Daha sonra 
+<div class="panel-heading">
+<a href="blog_ekle.php"class="btn btn-primary">Blog Ekle +</a>
+</div>    bu komut ile Blog Ekle linkini oluşturup blog_ekle.php sayfasına yönlendirdim 
+Daha sonra 
+<tr>
+<th>ID</th>
+ <th>Başlık</th>
+<th>Tarih</th>
+<th>Aktif</th>
+<th>Araçlar</th>
+</tr>
+bu komut ile blog yazılarının ekleneceği veri tabanı başlıklarını oluşturdum 
+
+
+
+                         
+
+                                   BLOG EKLEME SAYFASI TASARIMI
+
+
+
+                                  
+İlk önce sayfanın tarayıcısına BLOG EKLE|PANEL yazısını <title> komutlarının arasına yazarak oluşturdum .
+Daha sonra <div id="wrapper"> KOmutunun altındaki rqd-menu.php sayfasına kopyalamış olduğum NAVİGATİON 
+<Nav></Nav> tag larının arasını sildikten sonra rqd-menu.php sayfasını require_once komutu ile çekiğ
+<?php require_once"rqd-menu.php"; ?> menüleri getirmiş oldum.
+Daha sonra sayfa başlığını YENİ EKLE olarak değiştirdim.
+Daha sonra sayfaya <a href="blog.php"class="btn btn-primary">Geri Dön</a> bu komut ile geri dön 
+komutu yazıp a herf ile blog.php ye dönmesini sağladım .Daha sonra BAŞLIK ve ALT BAŞLIK ekledim
+ve açıklama kısmınna tinymce sitesinden indirmiş olduğumuz eklentiyi çektik. Bu çekme işlemini 
+sitenin dökümantasyon kısmındaki  <script src="../js/tinymce.min.js"></script> komutunu sayfanın
+ body tag larının sonuna yazdık. daha sonra aşağıdaki kodları yazdığımız script kodunun altına yazdık 
+daha sonra textarea komutuna id="mytextarea"; komutunu yazdıktan sonra sayfaya açıklama eklentisini 
+çekmiş olduk.
+ <script>
+ tinymce.init({
+ selector: '#mytextarea'
+  });
+ </script>  
+
+Daha sonra <label> <input type="radio" name="Aktif" value="1" checked>Aktif</label>  bu komut ile 
+aktif radiobutton nu  oluşturduk ve value yani değerini 1 yaptık bunu varsayılan olarak kalması için 
+kullandık .
+Hemen altına ise aynı kodun name="pasif" kısmına pasif yazarak buna value değeini 0 olarak verdik
+<label><input type="radio" name="Aktif"  value="0">Pasif</label>
+Daha sonra ise KAYDET ve TEMİZLE butonlarını aşağıdaki gibi kodladık.
+<button type="submit" class="btn btn-primary">Kaydet</button>
+<button type="reset" class="btn btn-primary">Temizle</button>
+
+                                   
+                           
+
+                                  HAKKIMIZDA SAYFASI TASARIMI 
+
+
+Hakkımızda sayfasına açıklama kısmını oluşturduk . Bunu yapabilmek için ilk önce blog-ekle.php 
+sayfasına tinymce sitesinden indirmiş olduğumuz eklentiyi çektik. Bu çekme işlemini 
+sitenin dökümantasyon kısmındaki  <script src="../js/tinymce.min.js"></script> komutunu hakkımızda sayfasının
+ body tag larının sonuna yazdık. daha sonra aşağıdaki kodlar yazdığımı script kodunun altına yazdık 
+daha sonra textarea komutunun id="mytextarea"; komutunu yazdıktan sonra hakkımızda sayfasına açıklama eklentisini 
+çekmiş olduk.
+ <script>
+ tinymce.init({
+ selector: '#mytextarea'
+  });
+ </script>    
+
+
+                               
+                      
+                              ADMİN PANELİNE GİRİŞ İŞLEMİ
+
+MD5: Bu komut parolayı güvenli hale getirir.
+Öncelikle  <?= md5("ha1735"); ?> Bu komut yazılarak çalıştırılır ve ekrandan  şifrenin açılımı kopyalanır. 
+($sifre) ye atadığımız rastgele şifre harfleri aslında belirlediğimiz şifrenin açılımıdır ve &_POST ile username çekildikten sonra
+ ($sifre) değişkenine bu şifre çıktısı yapıştırılır .
+
+ÖRNEK:
+
+  <?php 
+        if(@$_POST["submit"]){
+         $sifre = md5($_POST["password"]);
+         if(@$_POST["username"]=="hasan akoluk" && $sifre=="146118dd4e3c58f7092c2be101329465"){
+             $_SESSION["giriskontrol"]=1;
+             $_SESSION["username"]=$_POST["username"];
+             header("Location:anasayfa.php");
+             return true ;
+         }else{
+             echo"<p style='text-align: center;color:red;'>Kullanıcı adı veya şifre yalnış</p>";
+             return false;
+         }
+        }
+           
+        
+        ?>
+
+
+
+
+
+                                     ADMİN PANELİNDEN ÇIKIŞ İŞLEMİ
+
+    
+     
+
+
+
+   Önce rqd-menu.php sayafasında çıkış yap kısmına cikis.php linkini atadım
+
+ <li><a href="cikis.php"><i class="fa fa-sign-out fa-fw"></i>Çıkış Yap</a>
+
+
+Sonra cikis.php sayfasında daha önce kullanici adında oluşturduğum session nımı buraya getirdim
+
+
+session_start();
+$_SESSION["kullanici"]=1;
+unset($_SESSION["username"]);
+header("Location: index.php?i=cikis");
+session_destroy();
+
+
+
+
+
+Daha sonra anasayfa.php sayfasından index.php sayfasına çıkış yapmadan tarayıcıdan gitmesini engellemek için 
+index.php sayfasının en başına aşağıdaki kod yazılır.
+
+
+session_start();
+if(@$_SESSION["kullanici"]==1){
+    header("Location: anasayfa.php");
+}
+
+Daha sonra index.php sayfasından anasayfa.php sayfasına tararayıcıdan direk gitmeyi önlemek için
+rqd-menu.php sayfasının en başına aşağıdaki kod yazılır .
+
+
+session_start();
+  if(@$_SESSION["kullanici"]!= 1){
+      header("Location: index.php?i=hack");
+  }
+
+
+Daha sonra index.php sayfasına gelip giriş işlemini yaptığımız kodların altına aşağıdaki kodu yazarak 
+i=cikis sorgusuna eşitlemiş olduk ve aynı zamanda i=hack işlemine elseif deki kodu tanımlayarak
+kullanıcının giriş yapmadan tarayıcıdan giriş yapmasına önce giriş yap diyerek uyarı verdik.
+
+
+  if(@$_GET["i"]=="cikis"){
+            echo"<p style='text-align: center; color:green;'>Çıkış yapıldı</p>";
+        }elseif(@$_GET["i"]=="hack"){
+            echo"<p style='text-align: center; color:red;'>Önce giriş yapınız!</p>";    
+        }
+
+
+
+
+
+                                FONKSİYON DOSYASI HAZIRLAMA
+
+Öncelikle aşağıdaki kod ile türkçe karakter sıkıntısının önüne geçmemiz gerekir 
+
+Örnek:
+
+
+header("content-type: text/html; charset=utf-8");
+
+content-type : içerik tipi anlamına gelir.
+
+text/html: metnin html olduğunu belirler.
+
+charset=utf-8: karakter kümesini belirler
+
+
+
+setlocale : Bu komut ile türkçe dil desteği vermeyi sağlarız
+
+Örnek:
+
+setlocale(LC-ALL, 'tr_TR.URF-8', 'tr_TR', 'tr','turkish');
+
+
+try catch komutlarını yazdıkdan sonra atanan değişkenin yanına exec komutu kullanılır 
+nu komut yine türkçe karakter sorunu yaşamamak için kullanılır .
+
+Örnek:
+
+$db->exec("SET NAMES 'utf-8', SET CHARSET 'utf-8'");
+
+
+DB bağlantısı aşağıdaki gibidir.
+
+<?php
+header("content-type: text/html; charset=utf-8");
+error_reporting(0);
+setlocale(LC_ALL, 'tr_TR.utf-8', 'tr_TR', 'tr','turkish');
+$host ="localhost";
+$dbuser ="root";
+$pass ="";
+$dbname ="ornek";
+
+try{
+ $db = new PDO("mysql:host=$host; dbname=$dbname", $dbuser,$pass);
+}catch(PDOException $s){
+   echo $s->getmessage();
+}
+  $db->exec("SET NAMES 'utf8'; SET CHARSET 'utf8'");
+    define("site","http://localhost/proje/");
+?>
+
+
+
+
+                                             BLOG YAZISI EKLEME İŞLEMİ
+
+
+htmlspecialchars = Özel karakter eklemek için kullanılır veritabanına eklenilen yazının başında ve sonunda 
+kullanıldığını belli eder.
+
+
+errorinfo = Ekrana hata bastırmak için kullanılır.
+
+
+İlk önce aşağıdaki komut ile submit aktif hale getirilir.
+
+if(@$_POST["submit"]){}
+
+Daha sonra htmlspecialchars kodu ile tanımlayacağımız başlık alt başlık açıklama bölümlerine özel karakter 
+sorunu çözülür .
+
+ $baslik = htmlspecialchars($_POST["baslik"], ENT_QUOTES ,'utf-8');
+    $alt_baslik = htmlspecialchars($_POST["alt_baslik"], ENT_QUOTES,'utf-8');
+    $aciklama = htmlspecialchars($_POST["aciklama"], ENT_QUOTES,'utf-8');
+    $aktif = htmlspecialchars($_POST["aktif"], ENT_QUOTES,'utf-8');
+
+
+   Sonrasında ise veri tabanına veri ekleme işi gerçekleştirilir.
+
+
+$ekle = $db->prepare("INSERT INTO`blog`(`baslik`,`alt_baslik`,`aciklama`,`aktif`)VALUES(:baslik,:alt_baslik,:aciklama,:aktif)");
+    $ekle -> bindValue(":baslik",$baslik,PDO::PARAM_STR);
+    $ekle -> bindValue(":alt_baslik",$alt_baslik,PDO::PARAM_STR);
+    $ekle -> bindValue(":aciklama",$aciklama,PDO::PARAM_STR);
+    $ekle -> bindValue(":aktif",$aktif,PDO::PARAM_INT);
+
+
+
+    Sonra if else ile ekleme işlemi execute (çalıştır) edilir. ve header ile link oluşturarak linklerin sonuna
+
+?i=ekle ve ?i=hata olarak bildirirm eklenir.
+
+ if($ekle->execute()){
+        header("Location: blog.php?i=ekle");
+    }else{
+        header("Location: blog.php?i=hata");
+    }
+}
+
+SONUÇ = 
+
+<?php
+if(@$_POST["submit"]){
+    $baslik = htmlspecialchars($_POST["baslik"], ENT_QUOTES ,'utf-8');
+    $alt_baslik = htmlspecialchars($_POST["alt_baslik"], ENT_QUOTES,'utf-8');
+    $aciklama = htmlspecialchars($_POST["aciklama"], ENT_QUOTES,'utf-8');
+    $aktif = htmlspecialchars($_POST["aktif"], ENT_QUOTES,'utf-8');
+    $ekle = $db->prepare("INSERT INTO`blog`(`baslik`,`alt_baslik`,`aciklama`,`aktif`)VALUES(:baslik,:alt_baslik,:aciklama,:aktif)");
+    $ekle -> bindValue(":baslik",$baslik,PDO::PARAM_STR);
+    $ekle -> bindValue(":alt_baslik",$alt_baslik,PDO::PARAM_STR);
+    $ekle -> bindValue(":aciklama",$aciklama,PDO::PARAM_STR);
+    $ekle -> bindValue(":aktif",$aktif,PDO::PARAM_INT);
+    if($ekle->execute()){
+        header("Location: blog.php?i=ekle");
+    }else{
+        header("Location: blog.php?i=hata");
+    }
+}
+?>
+
+
+
+                                   BLOG YAZILARINI LİSTELEME
+
+
+margin: kenar boşluklarını ayarlamak için kullanılır .
+<span></span> : span komutları doğru işlem yapıldığında success ile yeşil
+yalnış yapıldığında danger ile kırmızı uyarı vermek için kullanılır. 
+Yani bir metni span class komutu ile renklendire biliriz.Özelliklede butonlar üzerinde 
+kullanılır
+
+btn-xs : Bir butonu yada nesneyi küçültmeye yarar
+px:15 : Kenar boşluğunun ne kadar olacağını belirler
+
+onclick : Silme veya düznleme gibi butonlara bastığımızda (emin misiniz) gibi uyarılar 
+vermek için kullanılır.
+confirm : onaylamak
+
+   İlk önce if elseif oluşturup ekleme ve hata oluşturan koşulları yapıyoruz.
+
+if(@$_GET["i"]=="ekle"){
+    echo"<spam class='text-success'>Ekleme yaıldı</spam>";
+}elseif(@$_GET["i"]=="hata"){
+    echo"<spam class='text-danger'>Ekleme işlemi başarısız</spam>";
+}
+
+Burada <spam> içerisine yazılan hazır class='text-success' bootstrap kodu 
+ekleme yapıldı yazısını yeşil yapar danger ile yazılan başarısız işlemi ise 
+kırmızı yazar.
+
+$cek = $db->prepare("SELECT * FROM `blog` ORDER BY `id` DESC");
+    $cek->execute();
+    while($row = $cek fetch(PDO::FETCH_ASSOC)){
+
+
+Yukarıdaki select komutu ile blog tablosu desc yardımı ile sondan başa 
+doğru sıralanır.
+execute edilip çalıştırıldıktan sonra PDO ile fetch edilir yani getirilir.
+
+Sonra aşağıdaki kodlarla tablo şeklinde veritabanına çekeceğimiz komutlar yazılır 
+ve $row değişkenine aktardığımız PDO ile veri tabanından çekilir .
+
+<tr>
+<td><?= $row["id"]?></td>
+<td><?= $row["baslik"]?></td>
+<td><?= $row["tarih"]?></td>
+<td><?= $row["aktif"]?></td>
+</tr>
+
+Sonrasında ise buton oluşturularak düzenle ve silme işlemi için class ve style ler oluşturulur
+
+<a href="blog_duzenle.php?id= <?= $row["id"]?>"  class='btn btn-warning btn-xs' style='right-margin 15px:'>Düzenle</a>
+<a href="blog.php?is=sil" onclick="return confirm('Silmek istediğinize eminmisiniz?') class='btn btn-danger btn-xs'">Sil</a>
+
+Burada class içine oluşturularn btn btn-Warning Düzenle butonunu sarı renk yapar
+danger ise kırmızı renk yapar.
+
+style='right-margin 15px:' komutu ise sağa doğru 15 px boşluk verir.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
